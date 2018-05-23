@@ -1,0 +1,18 @@
+
+<div class="container">
+    <br>
+    <center>
+        <h1>< 성 재 의 게 시 판 ></h1>
+        <p> 게시판 과제 입니다 </p>
+    </center>
+
+    <a href="/board/new">[ 글 쓰 기 ]</a><br><br>
+    <% @list_post.each do |p| %>
+        제목 : <a href="/board/show/<%= p.id %>"> <%= p.title %> </a> <br>
+        작성자 : <%= p.editor %> <br>
+        <a href="/board/delete/<%= p.id %>">[ 삭 제 ]</a>
+        <a href="/board/edit/<%=p.id%>">[ 수 정 ]</a>   
+        <hr/>
+    <% end %>
+</div>
+

@@ -1,0 +1,16 @@
+<div class="container">
+  <br>
+  <center>
+      <h1>[ <%= params[:p_id] %>번 글입니다 ]</h1>
+      <p>글을 수정 / 삭제하세요</p>
+  </center>    
+
+<h2>제목 : <%= @show_post.title %> <br><br></h2>
+<h2>작성자 : <%= @show_post.editor %> <br><br></h2>
+<h3>내용 : <%= @show_post.content %> <br><br></h3>
+
+<a href="/board/delete/<%= @show_post.id %>">[ 삭 제 ]</a>
+<a href="/board/edit/<%=@show_post.id%>">[ 수 정 ]</a>
+<a href="/">[ 귀 환 ]</a>
+
+
