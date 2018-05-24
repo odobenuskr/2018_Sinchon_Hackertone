@@ -12,5 +12,29 @@
 <a href="/board/delete/<%= @show_post.id %>">[ 삭 제 ]</a>
 <a href="/board/edit/<%=@show_post.id%>">[ 수 정 ]</a>
 <a href="/">[ 귀 환 ]</a>
+<hr/><br><br>
+    <% @show_reply.each do |r| %>
+      작성자 : <%= r.editor %> <br>
+      댓글내용 : <%= r.content %> <br>
+      <a href="/comment/reply_delete/<%=r.id%>">[ 삭 제 ]</a>
+      <hr/>
+    <% end %>
+<br><br>
+<center><h3>[ 댓글 달기 ]</h3></center>
+  <form action="/comment/reply_create" method="POST">
+      <div class="form-group">
+        <label for="editor">댓글 작성자</label>
+        <input type="text" name="replyeditor" class="form-control" id="exampleInputPassword1" placeholder="editor">
+      </div>
+      <div class="form-group">
+          <label for="comment">글 내용</label>
+          <textarea class="form-control" name="replycontent" rows="10" id="comment"></textarea>
+        </div>
+      <div class="form-group">
+        <input type="hidden" name="postnumber" class="form-control" id="exampleInputPassword1" placeholder="editor" value="<%=params[:p_id]%>">
+      </div>
+      <button type="submit" class="btn btn-primary">작성하기</button>
+    </form>
+</div>
 
 
