@@ -1,18 +1,221 @@
+<link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Gugi|Nanum+Gothic" rel="stylesheet">
 
-<div class="container">
+<!-- Stylesheet -->
+
+<div class="contain">
     <br>
     <center>
-        <h1>< 성 재 의 게 시 판 ></h1>
-        <p> 게시판 과제 입니다 </p>
+        
+        <h1> 컴 맹 위 키 </h1>
+        <br>
+        <h5> 컴알못 대학생을 위한 노트북 추천 서비스 </h5>
     </center>
-
-    <a href="/board/new">[ 글 쓰 기 ]</a><br><br>
-    <% @list_post.each do |p| %>
-        제목 : <a href="/board/show/<%= p.id %>"> <%= p.title %> </a> <br>
-        작성자 : <%= p.editor %> <br>
-        <a href="/board/delete/<%= p.id %>">[ 삭 제 ]</a>
-        <a href="/board/edit/<%=p.id%>">[ 수 정 ]</a>   
-        <hr/>
-    <% end %>
+    <%= image_tag("squirrel2.png", :class =>"squirrelimg") %>
 </div>
 
+<style>
+  a{
+  display:block;
+  text-decoration:none;
+  text-align:center;
+  }
+  
+  div{
+  display:block;
+  -webkit-transition:all .8s linear;
+  -moz-transition:all .8s linear;
+  -o-transition:all .8s linear;
+  -ms-transition:all .8s linear;
+  transition:all .8s linear;
+  }
+  
+  a:focus[data-filter]{
+    opacity:.8;
+     outline:none;
+  }
+  
+  a[data-filter="liberal"]:focus ~ div:not([data-filter="liberal"]){
+    height:0px;
+    width:0px;
+    border:none;
+    margin:0;
+  }
+  
+  a[data-filter="art"]:focus ~ div:not([data-filter="art"]){
+    height:0px;
+    width:0px;
+    border:none;
+    margin:0;
+  }
+  
+  a[data-filter="engineer"]:focus ~ div:not([data-filter="engineer"]){
+    height:0px;
+    width:0px;
+    border:none;
+    margin:0;
+  }
+</style>
+
+<!-- Portfolio Section -->
+<section>
+  <center><div id="portfolio">
+  <h2>전공계열을 선택해주세요</h2>
+  <div class="container">
+    
+    <div class="categories">
+      <ul class="cat">
+        <li>
+          <ol class="type">
+            <li><a class ='mm' href="javascript:void(0);" data-filter="all">All</a></li>
+            <li><a class ='mm' href="javascript:void(0);" data-filter="liberal">인문/사회/경상</a></li>
+            <li><a class ='mm' href="javascript:void(0);" data-filter="art">미술/디자인/예체능</a></li>
+            <br><br>
+            <li><a class ='mm' href="javascript:void(0);" data-filter="engineer">건축/공대/이공</a></li>
+            <li><a class ='mm' href="javascript:void(0);" data-filter="computer">컴퓨터공학/정보통신/게임개발</a></li>
+            <li><a class ='mm' href="javascript:void(0);" data-filter="game">자유로운대학생활</a></li>
+          </ol>
+        </li>
+      </ul>
+    </div>
+    <div class="row">
+      <div class="portfolio-items">
+        
+        <div class="col-sm-6 col-md-3 col-lg-3" data-filter="liberal">
+          <div class="portfolio-item" >
+            <div class="hover-bg">
+              <div class="hover-text" style="display: table-cell; vertical-align: middle;">
+                <h4>SPSS / 하둡 / Matlab</h4>
+                <a href="/board/show/2">추천 컴퓨터 보러가기</a>
+              </div>
+              <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=dc483803225649c63ce880b4ccab2a27&auto=format&fit=crop&w=1990&q=80" height = 100% class="img-responsive" alt="수리/통계/데이터분석"> </a> </div>
+          </div>
+        </div>
+        
+        <div class="col-sm-6 col-md-3 col-lg-3" data-filter="liberal">
+          <div class="portfolio-item">
+            <div class="hover-bg">
+              <div class="hover-text">
+                <h4>휴대용</h4>
+                <a href="/board/show/3">추천 컴퓨터 보러가기</a>
+              </div>
+              <img src="https://images.unsplash.com/photo-1483389127117-b6a2102724ae?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=eeca69186adfa89d5e1b81fbd41c5512&auto=format&fit=crop&w=500&q=60" height = 100% class="img-responsive" alt="휴대용"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 engineer" data-filter="liberal">
+          <div class="portfolio-item">
+            <div class="hover-bg">
+              <div class="hover-text">
+                <h4>저소음</h4>
+                <a href="#">추천 컴퓨터 보러가기</a>
+              </div>
+              <img src="https://images.unsplash.com/photo-1511732351157-1865efcb7b7b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3da59e3581daae239cc8ff12841d3150&auto=format&fit=crop&w=1051&q=80" height = 100% class="img-responsive" alt="저소음"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 computer" data-filter="art">
+          <div class="portfolio-item">
+            <div class="hover-bg">
+              <div class="hover-text">
+                <h4>포토샵 / 일러스트 </br>라이트룸 / 큐베이스 / </br>피날레</h4>
+                <a href="#">추천 컴퓨터 보러가기</a>
+              </div>
+               <img src="https://images.unsplash.com/photo-1457464901128-7608dc7561ea?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8f43ead700f533404bd37bcbb5cfd679&auto=format&fit=crop&w=1050&q=80" height = 100% class="img-responsive" alt="미술입문"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 liberal" data-filter="art">
+          <div class="portfolio-item">
+            <div class="hover-bg">
+              <div class="hover-text">
+                <h4>베가스 / 프리미어프로 </br>애프터이펙트 / 마야 </br>시네마4D / 프로툴스</h4>
+                <a href="#">추천 컴퓨터 보러가기</a>
+              </div>
+              <img src="https://images.unsplash.com/photo-1527786560821-46037fab26b3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=871699b79a3d87034ad8d8cc184b5962&auto=format&fit=crop&w=1050&q=80" height = 100% class="img-responsive" alt="미술심화"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 art">
+          <div class="portfolio-item">
+            <div class="hover-bg">
+              <div class="hover-text">
+                <h4>AutoCad / KiCad </br>Matlab</h4>
+                <a href="#">추천 컴퓨터 보러가기</a>
+              </div>
+              <img src="https://images.unsplash.com/photo-1485965373059-f07657e9f841?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4db14da7d6f7ca92216779c5d17679aa&auto=format&fit=crop&w=1050&q=80" height = 100% class="img-responsive" alt="기공입문"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 engineer">
+          <div class="portfolio-item">
+            <div class="hover-bg">
+              <div class="hover-text">
+                <h4>3Dmax / 솔리드웍스  </br>카티아  /  스케치업</h4>
+                <a href="#">추천 컴퓨터 보러가기</a>
+              </div>
+              <img src="https://images.unsplash.com/photo-1514063364532-5abd25e38290?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1c5778cf5466d434d0d424ccd38474e8&auto=format&fit=crop&w=1050&q=80" height = 100% class="img-responsive" alt="기공심화"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 computer">
+          <div class="portfolio-item">
+            <div class="hover-bg">
+              <div class="hover-text">
+                <h4>비주얼스튜디오 </br>이클립스 </br>파이썬 / 유니티</h4>
+                <a href="#">추천 컴퓨터 보러가기</a>
+              </div>
+              <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=575755492ef51726cb066f422908b9d7&auto=format&fit=crop&w=1050&q=80" height = 100% class="img-responsive" alt="컴공입문"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 liberal">
+          <div class="portfolio-item">
+            <div class="hover-bg">
+              <div class="hover-text">
+                <h4>안드로이드 스튜디오 / VMWare / VirtualBox </h4>
+                <a href="#">추천 컴퓨터 보러가기</a>
+              </div>
+              <img src="https://images.unsplash.com/photo-1480694313141-fce5e697ee25?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=52a4afb57f457d834800bdcf0c837824&auto=format&fit=crop&w=1050&q=80" height = 100% class="img-responsive" alt="컴공심화"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 computer">
+          <div class="portfolio-item">
+            <div class="hover-bg">
+              <div class="hover-text">
+                <h4>유니티3D / 마야 </br>3Dmax / 바이패드</h4>
+                <a href="#">추천 컴퓨터 보러가기</a>
+              </div>
+              <img src="https://images.unsplash.com/photo-1439436556258-1f7fab1bfd4f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1e6f50d3ebc55e0412cb27e9ec5d0e1d&auto=format&fit=crop&w=1050&q=80" height = 100% class="img-responsive" alt="컴공그래픽작업"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 computer">
+          <div class="portfolio-item">
+            <div class="hover-bg">
+              <div class="hover-text">
+                <h4>FM / 리그오브레전드 </br>던전앤파이터 </h4>
+                <a href="#">추천 컴퓨터 보러가기</a>
+              </div>
+              <img src="https://attach.s.op.gg/forum/20170628034412_589964.png" height = 100% class="img-responsive" alt="저사양"> </a> </div>
+          </div>
+        </div>
+      
+      <div class="col-sm-6 col-md-3 col-lg-3 computer">
+          <div class="portfolio-item">
+            <div class="hover-bg">
+              <div class="hover-text">
+                <h4>스타2 / 스타리마스터 </br>디아블로3 </h4>
+                <a href="/board/show/13">추천 컴퓨터 보러가기</a>
+              </div>
+              <img src="https://img2.goodfon.ru/wallpaper/big/9/da/devil-demon-face-and-head.jpg" height = 100% class="img-responsive" alt="중사양"> </a> </div>
+          </div>
+        </div>
+      
+      <div class="col-sm-6 col-md-3 col-lg-3 computer">
+          <div class="portfolio-item">
+            <div class="hover-bg">
+              <div class="hover-text">
+                <h4>오버워치 / 배틀필드1 </br>검은사막 / FIFA17</h4>
+                <a href="/board/show/14">추천 컴퓨터 보러가기</a>
+              </div>
+              <img src="https://cdnb.artstation.com/p/assets/images/images/002/625/193/large/ethan-moore-my-overwatch-logo.jpg?1463782953" align="middle" height = 100% class="img-responsive" alt="고사양"> </a> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</center>
+</section>

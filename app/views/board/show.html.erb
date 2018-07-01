@@ -1,26 +1,28 @@
+<link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Gugi|Nanum+Gothic" rel="stylesheet">
+
 <div class="container">
   <br>
   <center>
-      <h1>[ <%= params[:p_id] %>번 글입니다 ]</h1>
-      <p>글을 수정 / 삭제하세요</p>
+      <h1><%= @show_post.title %></h1>
+      <h2> <%= @show_post.editor %> 을 위한 노트북 </h2>
   </center>    
 
-<h2>제목 : <%= @show_post.title %> <br><br></h2>
-<h2>작성자 : <%= @show_post.editor %> <br><br></h2>
-<h3>내용 : <%= @show_post.content %> <br><br></h3>
-
-<a href="/board/delete/<%= @show_post.id %>">[ 삭 제 ]</a>
-<a href="/board/edit/<%=@show_post.id%>">[ 수 정 ]</a>
-<a href="/">[ 귀 환 ]</a>
-<hr/><br><br>
+<a href="/board/delete/<%= @show_post.id %>">   DELETE   </a>
+<a href="/board/edit/<%=@show_post.id%>">   EDIT   </a>
+<a href="/">   HOME   </a>
+<hr/><br>
+<div class='container'>
+  <%= image_tag("#{@show_post.id}.png", :width => '100%', :align => 'right') %>
+</div>
+<br><br><hr>
     <% @show_reply.each do |r| %>
       작성자 : <%= r.editor %> <br>
       댓글내용 : <%= r.content %> <br>
-      <a href="/comment/reply_delete/<%=r.id%>">[ 삭 제 ]</a>
+      <a href="/comment/reply_delete/<%=r.id%>"> DELETE </a>
       <hr/>
     <% end %>
 <br><br>
-<center><h3>[ 댓글 달기 ]</h3></center>
+<center><h3> COMMENTS </h3></center>
   <form action="/comment/reply_create" method="POST">
       <div class="form-group">
         <label for="editor">댓글 작성자</label>
@@ -33,8 +35,6 @@
       <div class="form-group">
         <input type="hidden" name="postnumber" class="form-control" id="exampleInputPassword1" placeholder="editor" value="<%=params[:p_id]%>">
       </div>
-      <button type="submit" class="btn btn-primary">작성하기</button>
+      <button type="submit" class="btn btn-primary" style="background-color: #5fadcd; border: 0;">WRITE</button><br><br><br><br><br>
     </form>
 </div>
-
-
